@@ -1,0 +1,229 @@
+
+\documentclass{article}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{amsmath, amsthm, amssymb}
+\usepackage{hyperref}
+\usepackage{polski}
+\newtheorem{theorem}{Twierdzenie}
+\theoremstyle{definition}
+\usepackage{verbatim}
+\newtheorem{definition}{Definicja}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{enumerate}
+\title{Tytuł}
+\author{Amelia Dorożko}
+\date{\today}
+\begin{document}
+	
+	\maketitle
+	\begin{table}
+		\centering
+		\begin{tabular}{|c|c|c|}
+			\hline
+			Kolumna 1 & Kolumna 2 & Kolumna 3 \\ \hline
+			Wiersz 1  & Dane 1    & Dane 2    \\ \hline
+			Wiersz 2  & Dane 3    & Dane 4    \\ \hline
+		\end{tabular}
+		\caption{Przykładowa tabela}
+	
+	\end{table}
+	\section{Sekcja numerowana}
+	Przykładowy tekst.
+	\subsection{Podsekcja numerowana}
+	Przykładowy tekst.
+	\section*{Sekcja nienumerowana}
+	Przykładowy tekst.
+	\subsection*{Podsekcja nienumerowana}
+	Przykładowy tekst.
+	\section{Środowiska matematyczne}
+	\begin{definition}
+		Przykładowa definicja.
+	\end{definition}
+	\begin{theorem}
+		Przykładowe twierdzenie.
+	\end{theorem}
+	
+
+	
+	\subsection*{Wyliczenia}
+	
+	Przykładowo obliczymy:
+	
+	\[
+	\int_{-1}^{1} x^3 \, dx
+	\]
+	Korzystamy z podstawowego wzoru na całkowanie funkcji potęgowej:
+	
+	\[
+	\int x^n \, dx = \frac{x^{n+1}}{n+1} + C 
+	\] \\Stosując ten wzór do \( x^3 \), otrzymujemy:
+	
+	\[
+	\int x^3 \, dx = \frac{x^4}{4} + C
+	\]\\Teraz obliczamy wartość całki oznaczonej:
+	
+	\[
+	\int_{-1}^{1} x^3 \, dx = \left[ \frac{x^4}{4} \right]_{-1}^{1}
+	\]\\Podstawiamy granice całkowania:
+	
+	\[
+	\frac{1^4}{4} - \frac{(-1)^4}{4} = \frac{1}{4} - \frac{1}{4} = 0
+	\]\\Ostateczny wynik to:
+	
+	\[
+	\int_{-1}^{1} x^3 \, dx = 0
+	\]
+	
+	
+	
+	\begin{theorem}{(O wartości średniej)}
+		Niech $g$, $g'$, $f$, są ciągłe na $[b_1, b_2]$, $g$ monotoniczne na $[b_1, b_2]$. Wtedy $ \exists c \in [b_1, b_2]$ takie, że
+		\begin{equation}\label{wartość średnhia całki }
+			\int_{b_1}^{b_2} f(x)g(x) \, dx = g(b_1)\int_{b_1}^{c}f(x) \, dx + g(b_2)\int_{c}^{b_2}f(x)
+		\end{equation}
+	\end{theorem}
+	
+	\begin{theorem}{(Kryterium Dirichleta zbieżności całek)}
+		Niech:
+		
+		1$^{\circ}$ $\exists M > 0 \ \forall c \in (a,\infty), \ \ f \in \mathbb{R}[a,c]$ oraz $\left|\int_{a}^{c} f(x) \, dx\right| \leq M$.
+		
+		2$^{\circ}$ $g(x)$ jest monotoniczna na $[a,\infty)$.
+		
+		3$^{\circ}$ $\lim_{x \to \infty} g(x) = 0$.
+		
+		Wtedy
+		
+		\[
+		\int_{a}^{\infty} f(x) g(x) \, dx \ \text{jest zbieżna}.
+		\]
+	\end{theorem}
+	\begin{proof}
+		(z dowodu przez różniczkowanie złożenia: $g, f \in C^1$ i są ograniczone na $[a, \infty)$)
+		
+		\[
+		\text{Ustalmy } \varepsilon > 0
+		\]
+		
+		\[
+		\exists b_0 > a \quad \forall x > b_0 \quad 0 < g(x) < \frac{\varepsilon}{8M}
+		\]
+		
+		Wybieramy dowolne $b_1, b_2$ spełniające $b_0 < b_1 < b_2 < \infty$.
+		Z II tw. o wartości średniej:
+		\[
+		\exists c \in [b_1,b_2] \text{ takie, że } \int_{b_1}^{b_2} f(x)g(x) \, dx = g(b_1)\int_{b_1}^{c}f(x) \, dx + g(b_2)\int_{c}^{b_2}f(x)
+		\]
+		Stąd
+		\[
+		\left|\int_{b_1}^{b_2} f(x) g(x) \, dx\right| \leq g(b_1) \left| \int_{b_1}^{c} f(x) \, dx \right| + g(b_2) \left|\int_{c}^{b_2} f(x) \, dx \right| \leq \frac{\varepsilon}{2M}
+		\]
+		\[
+		\left|\int_{b_1}^{c} f(x) \, dx\right| = \left|\int_{a}^{c} f(x) \, dx - \int_{a}^{b_1} f(x) \, dx \right| \leq \left|\int_{a}^{c} f(x) \, dx \right| + \left| \int_{a}^{b_1} f(x) \, dx \right| \leq 2M
+		\]
+		Podobnie
+		\[
+		\left|\int_{c}^{b_2} f(x) \, dx \right|= \left| \int_{a}^{b_2} f(x) \, dx - \int_{a}^{c} f(x) \, dx \right| \leq \left| \int_{a}^{b_2} f(x) \, dx \right| +  \left| \int_{a}^{c} f(x) \, dx \right| \leq 2M
+		\]
+		spełnia warunek Cauchy'ego zbieżności całki.
+	\end{proof}
+		
+	\subsubsection*{Przykład}
+	Udowodnij, że podana całka:
+	\[
+	\int_{1}^{\infty} \frac{\sin x}{x} \, dx,
+	\] jest zbieżna.\\ Korzystając z kryterium Dirichleta:
+	\[
+	f(x) = \sin x, \quad g(x) = \frac{1}{x}
+	\]
+	\[
+	1^\circ \quad \forall \, c \in (1, \infty) \left|\int_{1}^{c} \sin x \, dx\right| = \left|\left[\cos x\right]_{1}^{c}\right| = \left|\cos c - \cos 1\right| \leq \left|\cos c\right| + \left|\cos 1\right| \leq 2
+	\]
+	\[
+	2^\circ \quad g(x) \text{ jest monotoniczna na } [1, \infty)
+	\]
+	\[
+	3^\circ \quad \lim_{x \to \infty} \frac{1}{x} = 0
+	\]
+	
+	\text{Z kryt. Dirichleta}
+	\[
+	\int_1^{\infty} \frac{\sin x}{x} \, dx \text{ jest zbieżna.}
+	\]
+
+
+\subsubsection*{Przykładowy plik pdf}
+\begin{figure}
+	\centering
+	\includegraphics[width=0.9\textwidth]{wykres(4)1.pdf}
+	
+\end{figure}
+\subsubsection*{Pakiet verbatim}
+\begin{verbatim}
+	Przykładowy tekst. 
+\end{verbatim}
+
+\subsubsection*{Wypunktowanie}
+\begin{enumerate}[a)]
+	\item wypunktowanie,
+	\item wypunktowanie.
+\end{enumerate}
+
+\begin{enumerate}
+	\item wypunktowanie,
+	\item wypunktowanie.
+\end{enumerate}
+\begin{itemize}
+	\item wypunktowanie,
+	\item wypunktowanie.
+\end{itemize}
+
+
+
+\subsubsection*{Fragment kodu}
+
+\lstset{
+	language=Python,        
+	basicstyle=\ttfamily,    
+	keywordstyle=\color{blue},
+	commentstyle=\color{green},
+	stringstyle=\color{red},    
+	showstringspaces=false,
+	numbers=left,           
+	tabsize=4               
+}
+
+
+	
+	\begin{lstlisting}
+		#Przykladowy kod w Pythonie
+		def dodawanie(x,y):
+			x+y = z
+			return z
+		print("Wynik dodawania:" + dodawnaie(5,6))
+		
+	\end{lstlisting}
+
+\begin{thebibliography}{9}
+	
+	\bibitem{latex} 
+	Autor, 
+	\textit{Tytuł}, 
+	Rok powstania.
+	\bibitem{latex}
+	Autor2, 
+	\textit{Tytuł2},
+	Rok powstania
+
+	
+\end{thebibliography}
+	
+	
+	
+	
+	
+	
+	
+\end{document}
