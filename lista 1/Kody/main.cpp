@@ -22,38 +22,34 @@ void INSERTION_SORT(int A[], int n) {
 }
 
 void MODIFIED_INSERTION_SORT(int A[], int n) {
-    for (int i = 1; i < n-1; i += 2) {
-        int pierwszy = A[i];
-        int drugi = A[i+1];
-        liczbaPrzypisan +=2;
-        if (pierwszy > drugi) {
-            liczbaPorownan++;
-            swap(pierwszy, drugi);
-            liczbaPrzypisan += 2;
-        }
+		for (int i = 1; i < n - 1; i += 2) {
+			int pierwszy = A[i - 1];
+			int drugi = A[i];
+			liczbaPrzypisan += 2;
+			if (pierwszy > drugi) {
+				liczbaPorownan++;
+				swap(pierwszy, drugi);
+				liczbaPrzypisan += 2;
+			}
+			int j = i - 2;
+			while (j >= 0 && A[j] > drugi) {
+				liczbaPorownan++;
+				A[j + 2] = A[j];
+				liczbaPrzypisan++;
+				j --;
+			}
+			A[j + 2] = drugi;
+			while (j >= 0 && A[j] > pierwszy) {
+				liczbaPorownan++;
+				A[j + 1] = A[j];
+				liczbaPrzypisan++;
+				j --;
+			}
+			A[j + 1] = pierwszy;
+			liczbaPrzypisan += 2;
 
-        int j = i - 1;
-        while (j >= 0 && A[j] > pierwszy) {
-            liczbaPorownan++;
-            A[j+1] = A[j];
-            liczbaPrzypisan++;
-            j--;
-        }
-        A[j+1] = pierwszy;
-        liczbaPrzypisan++;
-
-        j = i;
-        while (j >= 0 && A[j] > drugi) {
-            liczbaPorownan++;
-            A[j+1] = A[j];
-            liczbaPrzypisan++;
-            j--;
-        }
-        A[j+1] = drugi;
-        liczbaPrzypisan++;
-    }
-
-    if (n % 2 == 0) {
+		}
+    if (n % 2!= 0) {
         liczbaPorownan++;
         int ostatni = A[n - 1];
         liczbaPrzypisan++;
@@ -314,48 +310,48 @@ void printResults(int n) {
     liczbaPrzypisan = 0;
     INSERTION_SORT(A, n);
     cout << "INSERTION_SORT - Dlugosc tablicy: " << n << endl;
-    cout << "Liczba porównañ: " << liczbaPorownan << endl;
-    cout << "Liczba przypisañ: " << liczbaPrzypisan << endl;
+    cout << "Liczba porÃ³wnaÃ±: " << liczbaPorownan << endl;
+    cout << "Liczba przypisaÃ±: " << liczbaPrzypisan << endl;
 
     // MODIFIED_INSERTION_SORT
     liczbaPorownan = 0;
     liczbaPrzypisan = 0;
     MODIFIED_INSERTION_SORT(B, n);
     cout << "MODIFIED_INSERTION_SORT - Dlugosc tablicy: " << n << endl;
-    cout << "Liczba porównañ: " << liczbaPorownan << endl;
-    cout << "Liczba przypisañ: " << liczbaPrzypisan << endl;
+    cout << "Liczba porÃ³wnaÃ±: " << liczbaPorownan << endl;
+    cout << "Liczba przypisaÃ±: " << liczbaPrzypisan << endl;
 
     // MERGE_SORT
     liczbaPorownan = 0;
     liczbaPrzypisan = 0;
     MERGE_SORT(C, 0, n - 1);
     cout << "MERGE_SORT - Dlugosc tablicy: " << n << endl;
-    cout << "Liczba porównañ: " << liczbaPorownan << endl;
-    cout << "Liczba przypisañ: " << liczbaPrzypisan << endl;
+    cout << "Liczba porÃ³wnaÃ±: " << liczbaPorownan << endl;
+    cout << "Liczba przypisaÃ±: " << liczbaPrzypisan << endl;
 
     // MODIFIED_MERGE_SORT
     liczbaPorownan = 0;
     liczbaPrzypisan = 0;
     MODIFIED_MERGE_SORT(D, 0, n - 1);
     cout << "MODIFIED_MERGE_SORT - Dlugosc tablicy: " << n << endl;
-    cout << "Liczba porównañ: " << liczbaPorownan << endl;
-    cout << "Liczba przypisañ: " << liczbaPrzypisan << endl;
+    cout << "Liczba porÃ³wnaÃ±: " << liczbaPorownan << endl;
+    cout << "Liczba przypisaÃ±: " << liczbaPrzypisan << endl;
 
     // HEAP_SORT
     liczbaPorownan = 0;
     liczbaPrzypisan = 0;
     HEAP_SORT(E, n);
     cout << "HEAP_SORT - Dlugosc tablicy: " << n << endl;
-    cout << "Liczba porównañ: " << liczbaPorownan << endl;
-    cout << "Liczba przypisañ: " << liczbaPrzypisan << endl;
+    cout << "Liczba porÃ³wnaÃ±: " << liczbaPorownan << endl;
+    cout << "Liczba przypisaÃ±: " << liczbaPrzypisan << endl;
 
     // MODIFIED_HEAP_SORT
     liczbaPorownan = 0;
     liczbaPrzypisan = 0;
     MODIFIED_HEAP_SORT(F, n);
     cout << "MODIFIED_HEAP_SORT - Dlugosc tablicy: " << n << endl;
-    cout << "Liczba porównañ: " << liczbaPorownan << endl;
-    cout << "Liczba przypisañ: " << liczbaPrzypisan << endl;
+    cout << "Liczba porÃ³wnaÃ±: " << liczbaPorownan << endl;
+    cout << "Liczba przypisaÃ±: " << liczbaPrzypisan << endl;
 
     cout << "------------------------------------" << endl;
 }
