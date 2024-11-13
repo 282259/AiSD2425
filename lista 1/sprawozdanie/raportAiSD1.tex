@@ -52,25 +52,40 @@ W tej metodzie każda kolejna liczba z tablicy jest porównywana z elementami po
 \end{table}
 \subsection{\texttt{MODIFIED\_INSERTION\_SORT}}
 Sortowanie przez wstawianie oraz jego zmodyfikowana wersja, jest algorytmem o złożoności czasowej \emph{O($n^2$)} w najgorszym z możliwych wypadków. 
-\\ \texttt{MODIFIED\_INSERTION\_SORT} okazuje się nie być najkorzystniejszym rozwiązaniem, co spowodowane jest przykładowo użyciem \texttt{swap} czy większą ilością zmiennych do porównania. Dodatkowo, wprowadzanie operacji \texttt{swap} dla par elementów może prowadzić do  sytuacji, gdy elementy są przesuwane więcej razy niż w standardowej wersji.Zmodyfikowany algorytm lepiej radzi sobie z danymi, które są już w pewnym stopniu uporządkowane
+\\ \texttt{MODIFIED\_INSERTION\_SORT}, gdy przesuwamy większy element, równocześnie "za darmo" przesuwamy też mniejszy element pary, który będzie potrzebował tej samej serii operacji. Główna pętla przechodzi przez listę co dwa indeksy, co zmniejsza liczbę iteracji pętli o połowę. Przy dużych tablicach ta zmiana znacznie obniża czas wykonania.
 \begin{lstlisting}
-	if (pierwszy > drugi) {
-		swap(pierwszy, drugi); 
-		liczbaPrzypisan += 2;  
+void MODIFIED_INSERTION_SORT(int A[], int n) {
+	for (int i = 1; i < n - 1; i += 2) {
+		int pierwszy = A[i - 1];
+		int drugi = A[i];
+		liczbaPrzypisan += 2;
+		if (pierwszy > drugi) {
+			liczbaPorownan++;
+			swap(pierwszy, drugi);
+			liczbaPrzypisan += 2;
+		}
+		int j = i - 2;
+		while (j >= 0 && A[j] > drugi) {
+			liczbaPorownan++;
+			A[j + 2] = A[j];
+			liczbaPrzypisan++;
+			j --;
+		}
+		A[j + 2] = drugi;
+		while (j >= 0 && A[j] > pierwszy) {
+			liczbaPorownan++;
+			A[j + 1] = A[j];
+			liczbaPrzypisan++;
+			j --;
+		}
+		A[j + 1] = pierwszy;
+		liczbaPrzypisan += 2;
+		
 	}
-	int j = i - 1;
-	while (j >= 0 && A[j] > pierwszy) {
-		liczbaPorownan++;
-		A[j+1] = A[j];
-		liczbaPrzypisan++;
-		j--;
-	}
-	A[j+1] = pierwszy;
-	liczbaPrzypisan++;
 \end{lstlisting}
-W celu uzyskania pełnej poprawności algorytmu, należało rozważyć przypadek dla tablic o parzystej ilości elementów,
+W celu uzyskania pełnej poprawności algorytmu, należało rozważyć przypadek dla tablic o nieparzystej ilości elementów,
 \begin{lstlisting}
-	    if (n % 2 == 0) {
+	if (n % 2!= 0) {
 		liczbaPorownan++;
 		int ostatni = A[n - 1];
 		liczbaPrzypisan++;
@@ -84,6 +99,8 @@ W celu uzyskania pełnej poprawności algorytmu, należało rozważyć przypadek
 		A[j + 1] = ostatni;
 		liczbaPrzypisan++;
 	}
+
+
 \end{lstlisting}
 \begin{table}[h!]
 	\centering
@@ -91,14 +108,14 @@ W celu uzyskania pełnej poprawności algorytmu, należało rozważyć przypadek
 	\begin{tabular}{|c|c|c|}
 		\hline
 		\textbf{Długość tablicy (n)} & \textbf{Liczba porównań} & \textbf{Liczba przypisań} \\ \hline
-		5   & 4     & 14     \\ \hline
-		10  & 23    & 43     \\ \hline
-		100 & 2616  & 2834   \\ \hline
-		200 & 10046 & 10491  \\ \hline
-		400 & 37342 & 38222  \\ \hline
-		600 & 86801 & 88139  \\ \hline
-		800 & 163805 & 165599 \\ \hline
-		1000 & 249194 & 251446 \\ \hline
+		5   & 5     & 14     \\ \hline
+		10  & 12   &   29   \\ \hline
+		100 & 1606  & 1826   \\ \hline
+		200 & 6666 & 7116  \\ \hline
+		400 & 25417 & 26320  \\ \hline
+		600 & 56965 & 58307  \\ \hline
+		800 & 108414 & 110217 \\ \hline
+		1000 & 164210 & 166450 \\ \hline
 	\end{tabular}
 	\caption{MODIFIED\_INSERTION\_SORT}
 \end{table}
@@ -242,10 +259,10 @@ Modyfikacja algorytmu \texttt{HEAP\_SORT} polega na wprowadzeniu kopca ternarneg
 \subsubsection*{Porównanie klasycznych i zmodyfikowanych algorytmów sortowania}
 
 \begin{enumerate}
- \item Przyrównując obie wersje algorytmu \texttt{INSERTON\_MERGE}, łączna ilość operacji jest niemal identyczna, zarówno dla dużych jak i małych danych.
+ \item Przyrównując obie wersje algorytmu \texttt{INSERTON\_MERGE}, po wprowadzeniu niewielkich zmian zauważamy, że zmodyfikowany algorytm jest znacznie wydatniejszy od swojej zwykłej wersji.
   \begin{figure}[H]
  	\centering
- 	\includegraphics[width=1\textwidth]{Figure_1.pdf}
+ 	\includegraphics[width=1\textwidth]{Figure_1.1.pdf}
  \end{figure}
  \item Kolejne dwie wersje modyfikacji, są korzystniejszym rozwiązaniem.
 
@@ -265,7 +282,7 @@ Modyfikacja algorytmu \texttt{HEAP\_SORT} polega na wprowadzeniu kopca ternarneg
 \end{figure}
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=1\textwidth]{Figure_5.pdf}
+	\includegraphics[width=1\textwidth]{Figure_5.1.pdf}
 \end{figure}
 \end{enumerate}
 Poprzez porównanie poprzednio opisanych algorytmów sortujących,  w przypadku danych o dużej objętości lub nieprzewidywalnych zestawów danych, algorytmy \texttt{MERGE\_SORT} i \texttt{HEAP\_SORT} będą bardziej optymalne, podczas gdy \texttt{INSERTION\_SORT} będzie miał sens głównie dla niewielkich zbiorów, lub w pewnej części uporządkowanych.

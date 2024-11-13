@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.5.8)  24 OCT 2024 00:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.5.8)  13 NOV 2024 20:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -426,9 +426,13 @@ pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has
  been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.60 	}
-       ]
-Overfull \hbox (2.44044pt too wide) in paragraph at lines 111--112
+l.62 		if 
+          (pierwszy > drugi) {]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Overfull \hbox (2.44044pt too wide) in paragraph at lines 128--129
 \T1/cmr/m/n/10 na-st¦p-nie sca-la dwie po-sor-to-wa-ne cz¦-±ci, co da-je caª-ko
 -wi-t¡ zªo-»o-no±¢ \T1/cmr/m/it/10 O($\OML/cmm/m/it/10 n []\OT1/cmr/m/n/10 (\OM
 L/cmm/m/it/10 n\OT1/cmr/m/n/10 )$\T1/cmr/m/it/10 )\T1/cmr/m/n/10 . 
@@ -437,81 +441,83 @@ L/cmm/m/it/10 n\OT1/cmr/m/n/10 )$\T1/cmr/m/it/10 )\T1/cmr/m/n/10 .
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[2
+[2]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[3
 pdfTeX warning (ext4): destination with the same identifier (name{table.2}) has
  been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.134 
-      ] [3
+l.191 
+      
 pdfTeX warning (ext4): destination with the same identifier (name{table.3}) has
  been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.174 
-      
-pdfTeX warning (ext4): destination with the same identifier (name{table.4}) has
- been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.174 
+l.191 
       ]
-Overfull \hbox (19.4399pt too wide) in paragraph at lines 195--196
+Overfull \hbox (19.4399pt too wide) in paragraph at lines 212--213
 \T1/cmr/m/n/10 go.Mniejsza "gª¦-bo-ko±¢" kop-ca ozna-cza, »e ope-ra-cje prze-si
 e-wa-nia \T1/cmtt/m/n/10 MODIFIED_HEAPIFY
  []
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<Figure_1.pdf, id=112, 462.52798pt x 346.89601pt>
-File: Figure_1.pdf Graphic file (type pdf)
-<use Figure_1.pdf>
-Package pdftex.def Info: Figure_1.pdf  used on input line 248.
-(pdftex.def)             Requested size: 345.0pt x 258.76337pt.
 [4
+pdfTeX warning (ext4): destination with the same identifier (name{table.4}) has
+ been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.224 	}
+        
 pdfTeX warning (ext4): destination with the same identifier (name{table.5}) has
  been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.249  \end{figure}
-                   ]
-<Figure_2.pdf, id=142, 462.52798pt x 346.89601pt>
-File: Figure_2.pdf Graphic file (type pdf)
-<use Figure_2.pdf>
-Package pdftex.def Info: Figure_2.pdf  used on input line 254.
-(pdftex.def)             Requested size: 345.0pt x 258.76337pt.
-<Figure_3.pdf, id=143, 462.52798pt x 346.89601pt>
-File: Figure_3.pdf Graphic file (type pdf)
-<use Figure_3.pdf>
-Package pdftex.def Info: Figure_3.pdf  used on input line 258.
-(pdftex.def)             Requested size: 345.0pt x 258.76337pt.
+l.224 	}
+        ]
+<Figure_1.1.pdf, id=143, 579.60541pt x 433.62pt>
+File: Figure_1.1.pdf Graphic file (type pdf)
+<use Figure_1.1.pdf>
+Package pdftex.def Info: Figure_1.1.pdf  used on input line 265.
+(pdftex.def)             Requested size: 345.0pt x 258.10304pt.
  [5
 pdfTeX warning (ext4): destination with the same identifier (name{table.6}) has
  been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.259  \end{figure}
-                    <./Figure_1.pdf>] [6 <./Figure_2.pdf> <./Figure_3.pdf>]
-<Figure_4.pdf, id=308, 462.52798pt x 346.89601pt>
+l.267  \item K
+              olejne dwie wersje modyfikacji, sÄ… korzystniejszym rozwiÄ…zan...
+]
+<Figure_2.pdf, id=165, 462.52798pt x 346.89601pt>
+File: Figure_2.pdf Graphic file (type pdf)
+<use Figure_2.pdf>
+Package pdftex.def Info: Figure_2.pdf  used on input line 271.
+(pdftex.def)             Requested size: 345.0pt x 258.76337pt.
+<Figure_3.pdf, id=166, 462.52798pt x 346.89601pt>
+File: Figure_3.pdf Graphic file (type pdf)
+<use Figure_3.pdf>
+Package pdftex.def Info: Figure_3.pdf  used on input line 275.
+(pdftex.def)             Requested size: 345.0pt x 258.76337pt.
+ [6 <./Figure_1.1.pdf>] [7 <./Figure_2.pdf> <./Figure_3.pdf>]
+<Figure_4.pdf, id=330, 462.52798pt x 346.89601pt>
 File: Figure_4.pdf Graphic file (type pdf)
 <use Figure_4.pdf>
-Package pdftex.def Info: Figure_4.pdf  used on input line 264.
+Package pdftex.def Info: Figure_4.pdf  used on input line 281.
 (pdftex.def)             Requested size: 345.0pt x 258.76337pt.
-<Figure_5.pdf, id=309, 462.52798pt x 346.89601pt>
-File: Figure_5.pdf Graphic file (type pdf)
-<use Figure_5.pdf>
-Package pdftex.def Info: Figure_5.pdf  used on input line 268.
-(pdftex.def)             Requested size: 345.0pt x 258.76337pt.
-
-[7 <./Figure_4.pdf>]
-Overfull \hbox (18.79897pt too wide) in paragraph at lines 271--272
+<Figure_5.1.pdf, id=331, 539.1342pt x 433.62pt>
+File: Figure_5.1.pdf Graphic file (type pdf)
+<use Figure_5.1.pdf>
+Package pdftex.def Info: Figure_5.1.pdf  used on input line 285.
+(pdftex.def)             Requested size: 345.0pt x 277.48277pt.
+ [8 <./Figure_4.pdf>]
+Overfull \hbox (18.79897pt too wide) in paragraph at lines 288--289
 \T1/cmr/m/n/10 my \T1/cmtt/m/n/10 MERGE_SORT \T1/cmr/m/n/10 i \T1/cmtt/m/n/10 H
 EAP_SORT \T1/cmr/m/n/10 b¦-d¡ bar-dziej opty-mal-ne, pod-czas gdy \T1/cmtt/m/n/
 10 INSERTION_SORT
  []
 
-[8 <./Figure_5.pdf>] (./raportAiSD1.aux)
+[9 <./Figure_5.1.pdf>] (./raportAiSD1.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-04-11>
@@ -520,10 +526,10 @@ Package rerunfilecheck Info: File `raportAiSD1.out' has not changed.
 (rerunfilecheck)             Checksum: 7E17F3E3B322F0CD06F968F9B6E984FB;1376.
  ) 
 Here is how much of TeX's memory you used:
- 12054 strings out of 474050
- 177655 string characters out of 5746299
- 2035754 words of memory out of 5000000
- 34222 multiletter control sequences out of 15000+600000
+ 12074 strings out of 474050
+ 177987 string characters out of 5746299
+ 2076754 words of memory out of 5000000
+ 34226 multiletter control sequences out of 15000+600000
  576044 words of font info for 83 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,10n,79p,548b,2062s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -542,10 +548,10 @@ onts/type1/public/cm-super/sfrm1728.pfb><c:/texlive/2024/texmf-dist/fonts/type1
 -super/sftt0800.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sft
 t1000.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb>
 
-Output written on raportAiSD1.pdf (8 pages, 366448 bytes).
+Output written on raportAiSD1.pdf (9 pages, 359663 bytes).
 PDF statistics:
- 516 PDF objects out of 1000 (max. 8388607)
- 235 compressed objects within 3 object streams
- 91 named destinations out of 1000 (max. 500000)
+ 540 PDF objects out of 1000 (max. 8388607)
+ 255 compressed objects within 3 object streams
+ 107 named destinations out of 1000 (max. 500000)
  98 words of extra memory for PDF output out of 10000 (max. 10000000)
 
