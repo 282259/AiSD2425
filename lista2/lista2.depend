@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1732643076 source:c:\users\ewasz\onedrive\pulpit\algorytmy\lista2\main.cpp
+	<iostream>
+	<vector>
+	<climits>
+	<cmath>
+	<algorithm>
+	<iostream>
+	<vector>
+	<cmath>
+	<algorithm>
+
+1732574877 source:c:\users\ewasz\onedrive\pulpit\algorytmy\lista2\2.1.cpp
+	<iostream>
+
+1732312528 source:c:\users\ewasz\onedrive\pulpit\algorytmy\lista2\2.4.cpp
+
