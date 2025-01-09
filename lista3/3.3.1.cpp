@@ -95,6 +95,7 @@ void DYNAMIC_A_S(int s[], int f[], int n) {
 
 void RANDOM(int s[], int f[], int n) {
     s[0] = 0;
+    s[n+1] = INT_MAX;
     f[0] = INT_MIN;
     for (int i = 1; i <= n; i++) {
         s[i] = rand() % 100;
