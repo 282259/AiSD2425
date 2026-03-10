@@ -1,1 +1,1 @@
-Amelia Dorożko 282259
+Algorytmy i Struktury Danych
